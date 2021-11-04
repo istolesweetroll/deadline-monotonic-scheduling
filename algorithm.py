@@ -75,12 +75,17 @@ class Dms:
         # Setting X-axis limits
 
         # Setting labels for x-axis and y-axis
-        gnt.set_xlabel('seconds since start')
-        gnt.set_ylabel('Processor')
+        gnt.set_xlabel('czas')
+        gnt.set_ylabel('zadania')
         # Setting ticks on y-axis
         # Labelling tickes of y-axis
-        gnt.set_yticks([1, 2, 3])
-        gnt.set_yticklabels(['1', '2', '3'])
+
+        yticklabels = []
+        for x in args[1]:
+            if x[2] not in yticklabels:
+                yticklabels.append(x[2])
+        gnt.set_yticks(yticklabels)
+        gnt.set_yticklabels(yticklabels)
         # Setting graph attribute
         gnt.grid(True)
         # Declaring a bar in schedule
