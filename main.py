@@ -2,6 +2,11 @@ from PyQt6.QtWidgets import QApplication, QWidget,  QMessageBox
 from PyQt6 import uic, QtTest
 from PyQt6.QtCore import pyqtSlot, QProcess
 import sys
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from matplotlib.collections import PolyCollection
+
+from algorithm import Dms
 
 
 class UI(QWidget):
@@ -9,31 +14,51 @@ class UI(QWidget):
         super().__init__()
         # this is used for loading ui file
         uic.loadUi("untitled.ui", self)
-        self.read_data();
-        self.welcomeBackground.setStyleSheet("background-image:url(./—Pngtree—liquid marble texture  fluid_988813)");
-        self.resultsBackground.setStyleSheet("background-image:url(./—Pngtree—liquid marble texture  fluid_988813)");
-        self.error.setVisible(False);
+        self.read_data()
+        self.welcomeBackground.setStyleSheet("background-image:url(./—Pngtree—liquid marble texture  fluid_988813)")
+        self.resultsBackground.setStyleSheet("background-image:url(./—Pngtree—liquid marble texture  fluid_988813)")
+        self.error.setVisible(False)
         self.setFixedSize(644, 450)
-        self.start_2.clicked.connect(self.switch_to_results);
-        self.reset.clicked.connect(self.switch_to_welcome);
+        self.start_2.clicked.connect(self.switch_to_results)
+        self.reset.clicked.connect(self.switch_to_welcome)
 
     def switch_to_results(self):
 
-        self.welcome.setVisible(False);
+        self.welcome.setVisible(False)
         with open('data.txt', 'w') as file:
-            file.write(self.textEdit.toPlainText());
-        self.progressBar.setValue(0);
-        i = 0;
+            file.write(self.textEdit.toPlainText())
+        self.progressBar.setValue(0)
+        i = 0
         while i < 10:
-            self.progressBar.setValue(self.progressBar.value() + 10);
-            QtTest.QTest.qWait(100);
-            i = i + 1;
+            self.progressBar.setValue(self.progressBar.value() + 10)
+            QtTest.QTest.qWait(100)
+            i = i + 1
 
-        self.displayResults.setStyleSheet("background-image:url(./gfg_earliest_deadline_first.png)");
+        dms = Dms()
+        data = dms.run()
+
+        verts = {1:(), 2:(), 3:(), 4:()}
+
+        for d in data:
+            print(d[2])
+            verts[d[2]].append((d[0], d[1])) #TODO
+
+        print(verts)
+
+        fig, ax = plt.subplots()
+
+        for task in verts.keys():
+            bars = PolyCollection(verts[task], label=task)
+            ax.add_collection(bars)
+
+        ax.autoscale()
+
+        plt.savefig('gfg_earliest_deadline_first.png')
+        self.displayResults.setStyleSheet("background-image:url(./gfg_earliest_deadline_first.png)")
 
 
     def switch_to_welcome(self):
-        self.welcome.setVisible(True);
+        self.welcome.setVisible(True)
 
 
     def read_data(self):
