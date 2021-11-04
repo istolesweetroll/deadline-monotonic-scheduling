@@ -67,7 +67,6 @@ class UI(QWidget):
             data = f.read()
             self.textEdit.setText(data)
 
-
 app = QApplication([])
 window = UI()
 window.show()
