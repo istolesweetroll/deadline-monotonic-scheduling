@@ -66,7 +66,7 @@ class Dms:
 
         return result
 
-    def display(*args):
+    def save(*args):
         # Declaring a figure "gnt"
         fig, gnt = plt.subplots()
         # Setting Y-axis limits
@@ -103,4 +103,4 @@ if __name__ == "__main__":
 
     dms = Dms()
     results = dms.run()
-    dms.display(results)
+    dms.save(results)
