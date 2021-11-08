@@ -276,7 +276,7 @@ QFrame[isScrollArea=&quot;true&quot;] {
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="title">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -713,7 +713,7 @@ QFrame[isScrollArea=&quot;true&quot;] {
       <string>ALGORYTM DMS</string>
      </property>
     </widget>
-    <widget class="QLabel" name="error_2">
+    <widget class="QLabel" name="info">
      <property name="geometry">
       <rect>
        <x>20</x>

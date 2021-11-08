@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6ba51818-48f8-48ce-8bd6-9d385afe6b02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gantt1.png" beforeDir="false" afterPath="$PROJECT_DIR$/gantt1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gfg_earliest_deadline_first.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/untitled.ui" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/—Pngtree—liquid marble texture  fluid_988813.png" beforeDir="false" afterPath="$PROJECT_DIR$/background.png" afterDir="false" />
     </list>
     <list id="0bdca552-26f9-44f7-8fdd-844d6cbc60b3" name="Changes by karol" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636050725943</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Matplotlib visualisation">
+      <created>1636215672818</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636215672818</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
