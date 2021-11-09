@@ -61,9 +61,6 @@ class UI(QWidget):
             if length != 4:
                 f.close()
                 return False
-            if not words[1] >= words[3] > words[2]:
-                f.close()
-                return False
         f.close()
         return True
 
@@ -87,6 +84,12 @@ class Dms:
                 tasks.append(Task(int(tmp[0]), int(tmp[1]), int(tmp[2]), int(tmp[3])))
 
         return tasks
+    @staticmethod
+    def validate_task(task: Task):
+        if task.period >= task.deadline > task.execution_time:
+            return True
+        else:
+            return False
 
     def run(self):
         tasks = self.read_data("data.txt")
@@ -99,6 +102,8 @@ class Dms:
 
         for x in range(0, lowest_common_multiple):
             for task in tasks:
+                if not self.validate_task(task):
+                    return result
                 if x % task.period == 0 and completed_tasks.__contains__(task) and not (x == 0):
                     completed_tasks.remove(task)
 
